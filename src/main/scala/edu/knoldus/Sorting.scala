@@ -10,7 +10,6 @@ class Sorting {
         array(j) = array(j - 1)
         j = j - 1
       }
-      // put item in the hole
       array(j) = item
     }
 
@@ -43,7 +42,7 @@ class Sorting {
   }
 
   def bubbleSort(array: Array[Int]): Array[Int] = {
-    val hasSwaps =
+    val swap =
       for {
         i <- (1 until array.length)
       } yield {
@@ -56,7 +55,7 @@ class Sorting {
         else {false}
       }
 
-    if (hasSwaps.reduce(_ || _)){bubbleSort(array)}
+    if (swap.reduce(_ || _)){bubbleSort(array)}
     else {array}
   }
 
