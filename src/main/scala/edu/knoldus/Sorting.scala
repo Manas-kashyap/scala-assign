@@ -6,9 +6,7 @@ class Sorting {
     for (i <- 0 until array.length) {
       val item = array(i)
       var j = i
-      // keep moving the hole to next smaller index until A[iHole - 1] is <= item
       while (j > 0 && array(j - 1) > item) {
-        // move hole to next smaller index
         array(j) = array(j - 1)
         j = j - 1
       }
@@ -55,11 +53,11 @@ class Sorting {
           array(i - 1) = tmp
           true
         }
-        else false
+        else {false}
       }
 
-    if (hasSwaps.reduce(_ || _)) bubbleSort(array)
-    else array
+    if (hasSwaps.reduce(_ || _)){bubbleSort(array)}
+    else {array}
   }
 
 }
