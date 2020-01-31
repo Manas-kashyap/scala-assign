@@ -12,7 +12,7 @@ class Searching {
       val mid = l + (r - l) / 2
       if (array(mid) == elem)
       {
-        return true
+       true
       }
       if (array(mid) > elem) {
         mySearch(array, l, mid - 1, elem)
