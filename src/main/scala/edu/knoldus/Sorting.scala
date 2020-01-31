@@ -3,40 +3,37 @@ package edu.knoldus
 class Sorting {
 
   def insertionSort(array: Array[Int]): Array[Int] = {
-    for (i <- 0 until array.length) {
-      val item = array(i)
-      var j = i
-      while (j > 0 && array(j - 1) > item) {
-        array(j) = array(j - 1)
-        j = j - 1
+    for(i<-1 to array.length-1)
+    {
+      for(j<- i to 1 by -1)
+      {
+        if(array(j-1)>array(j))
+        {
+          val temp=array(j)
+          array(j)=array(j-1)
+          array(j-1)=temp
+
+        }
       }
-      array(j) = item
     }
 
     array
   }
 
   def selectionSort(array: Array[Int]): Array[Int] = {
-    def swap(array: Array[Int], i: Int, j: Int) {
-      var tmp = array(i)
-      array(i) = array(j)
-      array(j) = tmp
-    }
+    for(i<-0 to array.length-1)
+    {
+      val x = Array(i)
+      for(j<-i to array.length-1) {
 
-    var i = 0
-    while (i < (array.length - 1)) {
-      var min = i
-      var j = i + 1
+        if (array(j) < array(x(0))) {
 
-      while (j < array.length) {
-        if (array(j) < array(min)) {
-          min = j
+          x(0) = j
         }
-        j += 1
       }
-
-      swap(array, i, min)
-      i += 1
+      val temp=array(i)
+      array(i)=array(x(0))
+      array(x(0))=temp
     }
     array
   }
