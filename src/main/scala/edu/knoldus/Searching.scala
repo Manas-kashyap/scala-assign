@@ -28,6 +28,4 @@ class Searching {
     else { linearSearch(array.tail, elem) }
       true
   }
-
-
 }
